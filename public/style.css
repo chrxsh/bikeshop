@@ -1,0 +1,63 @@
+body { font-family: sans-serif; padding: 20px; }
+#products { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.card { border: 1px solid #ccc; padding: 10px; width: 200px; }
+.hidden { display: none; }
+nav button { margin-right: 5px; }
+
+/* bikin warna bg header */
+header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+/* buat logo */
+.logo {
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 25px;
+  padding: 12px;
+}
+
+/* Style the header links */
+.header2 {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* klo hover jadi ganti warna */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link */
+.headerisi a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.headerisi {
+  float: right;
+}
+
+/* Responsive adjustments for small screens */
+@media screen and (max-width: 500px) {
+  .header .logo,
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
