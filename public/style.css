@@ -1,8 +1,7 @@
-body { font-family: sans-serif; padding: 20px; }
-#products { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.card { border: 1px solid #ccc; padding: 10px; width: 200px; }
-.hidden { display: none; }
-nav button { margin-right: 5px; }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 /* bikin warna bg header */
 header {
@@ -18,46 +17,321 @@ header {
   font-weight: bold;
   line-height: 25px;
   padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Style the header links */
-.header2 {
-  float: left;
-  color: black;
+.logo img {
+  width: 60px; 
+  height: auto; 
+}
+
+.logo h1 {
+  font-size: 1.5rem; 
+  margin: 0;
+  color:rgb(255, 126, 195);
+  font-family: serif, cursive;
+}
+
+/* tulisan header */
+.headerisi {
+  float: right;
   text-align: center;
-  padding: 12px;
+  padding: 25px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 25px;
   border-radius: 4px;
+  gap: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.headerisi a {
+  color: rgb(255, 126, 195);  
+  text-decoration: none;      
 }
 
 /* klo hover jadi ganti warna */
-.header a:hover {
+.headerisi a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the active/current link */
+/* kalau aktif */
 .headerisi a.active {
   background-color: dodgerblue;
   color: white;
 }
 
-/* Float the link section to the right */
-.headerisi {
-  float: right;
+
+/* nah klo ini buat atur hero */
+body, html {
+    height: 100%;
+}
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/hero.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-/* Responsive adjustments for small screens */
-@media screen and (max-width: 500px) {
-  .header .logo,
-  .header a {
-    float: none;
+/* bikin texr */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.btn-hero {
+  display: inline-block;         
+  background-color: dodgerblue;  
+  color: white;                 
+  padding: 10px 20px;            
+  text-decoration: none;         
+  border-radius: 5px;            
+  cursor: pointer;               
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+}
+
+.btn-hero:hover {
+  background-color: #0059b3;   
+}
+
+/* about us */
+.about-us {
+  padding: 60px 20px;
+  background-color: #fffafc; 
+  font-family: 'Arial', sans-serif;
+}
+
+.about-us .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; 
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: rgb(255, 126, 195);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* ini untuk styling bagian products */
+.section {
+  margin-bottom: 50px;
+  padding: 20px; /* Increased from 0 10px */
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.filters {
+  margin-bottom: 15px;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card .image-wrapper {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #f5f5f5;
+}
+
+       
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+}
+
+.card h3,
+.card p {
+  margin: 8px 12px 0;
+  font-size: 14px;
+}
+
+.card h3 {
+  font-weight: bold;
+}
+
+.card button {
+  margin: auto 12px 12px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* hide modal by default */
+.hidden {
+  display: none;
+}
+
+/* gabisa scroll pas modal lg buka */
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* footer */
+.site-footer {
+  background-color: #f1f1f1;
+  padding: 40px 40px;
+  font-family: serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  max-width: 1100px;       
+  margin: 0 auto;
+  padding: 0 40px;        
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 10px;
+  min-width: 200px; 
+}
+
+/* logo */
+.footer-logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* bawah logo */
+.company-name {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  font-family: serif;
+  color: rgb(255, 126, 195);
+}
+
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 150px; 
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: rgb(255, 126, 195);
+  font-size: 16px;
+}
+
+.footer-right a:hover {
+  color: rgb(215, 43, 134);
 }

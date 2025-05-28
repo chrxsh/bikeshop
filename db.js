@@ -4,12 +4,15 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'bike_shop'
+  database: 'bikeshop'
 });
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to MySQL');
+db.connect(err => {
+  if (err) {
+    console.error('Database connection error:', err);
+    return;
+  }
+  console.log('Connected to the database');
 });
 
 module.exports = db;
